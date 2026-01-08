@@ -384,7 +384,6 @@
                 <button onclick="switchTab('ppa', 'sudo add-apt-repository ppa:tassiovirginio/try-rs && sudo apt update && sudo apt install try-rs')" id="tab-ppa" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">PPA (Ubuntu)</button>
                 <button onclick="switchTab('nix', 'nix profile install github:tassiovirginio/try-rs')" id="tab-nix" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">Nix</button>
                 <button onclick="switchTab('aur', 'yay -S try-rs-bin')" id="tab-aur" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">AUR</button>
-                <button onclick="switchTab('binary', 'gh release download -R tassiovirginio/try-rs')" id="tab-binary" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">Binary</button>
             </div>
 
             <div class="bg-[#0d1117] border border-gray-700 rounded-xl p-6 mono text-sm group relative max-w-2xl mx-auto text-left">
@@ -483,12 +482,10 @@
                 reqEl.innerHTML = 'Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed.';
             } else if (tab === 'aur') {
                 reqEl.innerHTML = 'Requirements: An Arch Linux helper like <code class="text-gray-400">yay</code> or <code class="text-gray-400">paru</code>.';
-            } else {
-                reqEl.innerHTML = 'Requirements: <code class="text-gray-400">gh</code> CLI or browser access.';
             }
 
             // Atualizar classes ativas
-            const tabs = ['cargo', 'ppa', 'nix', 'aur', 'binary'];
+            const tabs = ['cargo', 'ppa', 'nix', 'aur'];
             tabs.forEach(t => {
                 const el = document.getElementById('tab-' + t);
                 if (el) {
