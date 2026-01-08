@@ -29,7 +29,7 @@
 </head>
 <body class="bg-[#0d1117] text-gray-300 selection:bg-orange-500/30">
 
-    <!-- Navegação -->
+    <!-- Navigation -->
     <nav class="border-b border-gray-800 bg-[#0d1117]/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -49,7 +49,7 @@
         </div>
     </nav>
 
-    <!-- Seção Hero -->
+    <!-- Hero Section -->
     <header class="pt-20 pb-32 px-6 relative overflow-hidden bg-grid">
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-sm font-medium mb-6">
@@ -66,7 +66,7 @@
                 A lightning-fast TUI to manage temporary projects. Create, explore, and clone repositories instantly without cluttering your system.
             </p>
 
-            <!-- Seção de Badges -->
+            <!-- Badges Section -->
             <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
                 <a href="https://github.com/tassiovirginio/try-rs/releases" target="_blank">
                     <img src="https://img.shields.io/github/v/release/tassiovirginio/try-rs?style=flat-square&color=ea580c&label=GitHub" alt="GitHub release">
@@ -81,7 +81,7 @@
                     <img src="https://img.shields.io/badge/PPA-Launchpad-ea580c?style=flat-square&logo=ubuntu" alt="PPA Launchpad">
                 </a>
                 <a href="https://github.com/tassiovirginio/try-rs" target="_blank">
-                    <img src="https://img.shields.io/github/stars/tassiovirginio/try-rs?style=flat-square&color=ea580c" alt="GitHub stars">
+                    <img src="https://img.shields.io/github/stars/tassiovirginio/try-rs?style=flat-square&color=ea580c&label=GitHub%20Stars" alt="GitHub stars">
                 </a>
                 <a href="https://github.com/tassiovirginio/try-rs/graphs/contributors" target="_blank">
                     <img src="https://img.shields.io/github/contributors/tassiovirginio/try-rs?style=flat-square&color=ea580c" alt="GitHub contributors">
@@ -104,7 +104,7 @@
         </div>
     </header>
 
-    <!-- Seção de Demonstração -->
+    <!-- Demo Section -->
     <section class="px-6 -mt-16 relative z-20">
         <div class="max-w-5xl mx-auto">
             <div class="bg-[#010409] border border-gray-700 rounded-xl shadow-2xl overflow-hidden shadow-orange-500/10">
@@ -133,7 +133,7 @@
         </div>
     </section>
 
-    <!-- Seção de Comandos CLI -->
+    <!-- CLI Commands Section -->
     <section id="usage" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -188,7 +188,7 @@
         </div>
     </section>
 
-    <!-- Seção de Funcionalidades -->
+    <!-- Features Section -->
     <section id="features" class="py-24 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
@@ -263,7 +263,7 @@
         </div>
     </section>
 
-    <!-- Seção de Temas -->
+    <!-- Themes Section -->
     <section id="themes" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -311,7 +311,7 @@
         </div>
     </section>
 
-    <!-- Seção de Configuração -->
+    <!-- Configuration Section -->
     <section id="config" class="py-32 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
@@ -319,7 +319,7 @@
             </h2>
             <p class="text-gray-400 mb-8 leading-relaxed">Customize your experience by creating a <code class="mono text-orange-300">config.toml</code> file. The application checks for configuration in the following order:</p>
             
-            <!-- Caminhos por OS -->
+            <!-- Paths by OS -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <!-- Linux -->
                 <div class="flex flex-col gap-3">
@@ -422,8 +422,8 @@
         </div>
     </section>
 
-    <!-- Seção de Instalação -->
-    <section id="install" class="py-24 px-6">
+    <!-- Installation Section -->
+    <section id="install" class="py-24 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-white mb-12">Install Now</h2>
             
@@ -452,62 +452,27 @@
         </div>
     </section>
 
-    <!-- Seção de Atalhos -->
-    <section class="py-24 px-6 bg-[#161b22]/30 border-t border-gray-800">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <i data-lucide="keyboard" class="text-orange-500"></i> Interface Controls
-            </h2>
-            <div class="grid grid-cols-1 border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30">
-                <div class="flex items-center justify-between p-5 border-b border-gray-800 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">Character</span>
-                    <span class="text-gray-400 text-sm font-medium">Starts fuzzy search automatically</span>
-                </div>
-                <div class="flex items-center justify-between p-5 border-b border-gray-800 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">↑ / ↓</span>
-                    <span class="text-gray-400 text-sm font-medium">Navigate through the list of projects</span>
-                </div>
-                <div class="flex items-center justify-between p-5 border-b border-gray-800 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">Enter</span>
-                    <span class="text-gray-400 text-sm font-medium">Open selected workspace folder in terminal</span>
-                </div>
-                <div class="flex items-center justify-between p-5 border-b border-gray-800 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">Ctrl + E</span>
-                    <span class="text-gray-400 text-sm font-medium">Open preferred editor in the selected folder</span>
-                </div>
-                <div class="flex items-center justify-between p-5 border-b border-gray-800 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">Ctrl + T</span>
-                    <span class="text-gray-400 text-sm font-medium">Open theme selection popup</span>
-                </div>
-                <div class="flex items-center justify-between p-5 hover:bg-white/5 transition-colors">
-                    <span class="min-w-[80px] text-center text-white mono bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-700 text-xs shadow-inner tracking-tighter">Ctrl + D</span>
-                    <span class="text-gray-400 text-sm font-medium">Delete selected workspace folder</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Powered By Section -->
-    <div class="max-w-6xl mx-auto py-12 border-t border-gray-800/50 flex flex-wrap justify-center gap-8 text-xs text-gray-500 uppercase tracking-widest bg-[#0d1117]">
+    <div class="max-w-6xl mx-auto py-12 border-b border-gray-800/50 flex flex-wrap justify-center gap-8 text-xs text-gray-500 uppercase tracking-widest bg-[#0d1117]">
         <div class="flex items-center gap-3">
             <span>Developed with</span>
             <a href="https://www.rust-lang.org/" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors group">
-                <i data-lucide="cpu" class="w-4 h-4 text-orange-600 group-hover:scale-110 transition-transform"></i>
+                <img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" alt="Rust logo" class="w-5 h-5 object-contain invert group-hover:scale-110 transition-transform">
                 <span class="font-bold">Rust Language</span>
             </a>
         </div>
         <div class="flex items-center gap-3">
             <span>Powered by</span>
             <a href="https://ratatui.rs/" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-green-500 transition-colors group">
-                <i data-lucide="terminal" class="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform"></i>
+                <img src="https://raw.githubusercontent.com/ratatui-org/ratatui/main/assets/logo.png" alt="Ratatui logo" class="w-6 h-6 object-contain group-hover:scale-110 transition-transform">
                 <span class="font-bold">Ratatui Library</span>
             </a>
         </div>
     </div>
 
-    <!-- Rodapé -->
-    <footer class="py-12 border-t border-gray-800 px-6 bg-[#010409]">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-[#010409]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left mb-10">
             <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-center md:justify-start gap-2">
                     <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/logo.png" alt="try-rs logo" class="w-6 h-6 object-contain">
@@ -515,10 +480,19 @@
                 </div>
                 <span class="text-gray-500 text-sm">Built by <a href="https://github.com/tassiovirginio" class="text-gray-300 hover:text-orange-500 underline decoration-gray-700 underline-offset-4">Tássio Virgínio</a></span>
             </div>
-            <div class="flex gap-8 text-sm text-gray-500 font-medium">
-                <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors">Crates.io</a>
-                <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors">Star on GitHub</a>
-                <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors">MIT License</a>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Product Hunt Badge in Footer -->
+                <a href="https://www.producthunt.com/products/try-rs?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-try-rs" target="_blank" rel="noopener noreferrer">
+                    <img alt="try-rs - Your experiments deserve a place. | Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
+                </a>
+
+                <div class="flex gap-8 text-sm text-gray-500 font-medium">
+                    <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors">Crates.io</a>
+                    <a href="https://terminaltrove.com/try-rs" class="hover:text-white transition-colors">Terminal Trove</a>
+                    <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors">Star on GitHub</a>
+                    <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors">MIT License</a>
+                </div>
             </div>
         </div>
     </footer>
