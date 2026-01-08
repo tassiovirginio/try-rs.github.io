@@ -263,56 +263,8 @@
         </div>
     </section>
 
-    <!-- Themes Section -->
-    <section id="themes" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <i data-lucide="palette" class="text-orange-500"></i> Themes
-            </h2>
-            <p class="text-gray-400 mb-8 leading-relaxed">
-                You can switch between themes at runtime by pressing <code class="mono text-orange-400 bg-orange-400/10 px-1.5 py-0.5 rounded border border-orange-400/20">Ctrl+T</code>. 
-                The following themes are currently available:
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Catppuccin Mocha</span>
-                    <span class="text-[10px] text-gray-600 block mt-1 italic">(Default)</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Dracula</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">JetBrains Darcula</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Gruvbox Dark</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Nord</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Tokyo Night</span>
-                </div>
-            </div>
-
-            <div class="p-6 border border-gray-800 rounded-2xl bg-[#161b22]/30">
-                <div class="flex items-center gap-3 mb-4">
-                    <i data-lucide="info" class="w-5 h-5 text-blue-500"></i>
-                    <h3 class="text-lg font-bold text-white tracking-tight">Custom Themes</h3>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                    Preference for something unique? You can define your own color palette by overriding the <code class="mono text-orange-300">[colors]</code> section in your <code class="mono text-orange-300">config.toml</code>.
-                </p>
-                <a href="#config" class="text-xs text-orange-500 hover:text-orange-400 font-semibold flex items-center gap-1 transition-colors">
-                    View Configuration Guide <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Configuration Section -->
-    <section id="config" class="py-32 px-6 bg-[#161b22]/30 border-y border-gray-800">
+    <section id="config" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
                 <i data-lucide="settings" class="text-orange-500"></i> Configuration
@@ -487,11 +439,19 @@
                     <img alt="try-rs - Your experiments deserve a place. | Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
                 </a>
 
-                <div class="flex gap-8 text-sm text-gray-500 font-medium">
-                    <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors">Crates.io</a>
-                    <a href="https://terminaltrove.com/try-rs" class="hover:text-white transition-colors">Terminal Trove</a>
-                    <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors">Star on GitHub</a>
-                    <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors">MIT License</a>
+                <div class="flex flex-wrap justify-center md:justify-end gap-8 text-sm text-gray-500 font-medium">
+                    <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="package" class="w-4 h-4"></i> Crates.io
+                    </a>
+                    <a href="https://terminaltrove.com/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="terminal" class="w-4 h-4"></i> Terminal Trove
+                    </a>
+                    <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="github" class="w-4 h-4"></i> Star on GitHub
+                    </a>
+                    <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="file-text" class="w-4 h-4"></i> MIT License
+                    </a>
                 </div>
             </div>
         </div>
