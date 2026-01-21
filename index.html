@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>try-rs — Your experiments deserve a place</title>
-    <!-- Updated Favicon Link -->
+    <!-- Favicon atualizado -->
     <link rel="icon" type="image/x-icon" href="https://github.com/tassiovirginio/try-rs.site/raw/refs/heads/main/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Carregando a biblioteca Lucide com defer para garantir ordem de execução -->
@@ -58,7 +58,6 @@
                 <span>High-performance workspace manager</span>
             </div>
             
-            <!-- Logo Above Text -->
             <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/logo2.png" alt="try-rs logo" class="w-32 h-32 md:w-48 md:h-48 object-contain mb-8 hover:scale-105 transition-transform duration-300">
             
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight">
@@ -131,9 +130,6 @@
                     <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs/refs/heads/main/try-rs.gif" 
                          alt="try-rs TUI Demo" 
                          class="w-full h-auto block">
-                    <div class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md border border-gray-700 px-3 py-1.5 rounded-lg text-xs mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">
-                        Real TUI Demo
-                    </div>
                 </div>
             </div>
         </div>
@@ -142,55 +138,62 @@
     <!-- CLI Commands Section -->
     <section id="usage" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <i data-lucide="play-circle" class="text-orange-500"></i> CLI Commands
-            </h2>
-            <p class="text-gray-400 mb-8">You can also bypass the UI and use direct commands:</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                    <i data-lucide="terminal" class="text-orange-500"></i> CLI Commands
+                </h2>
+                <p class="text-gray-400">You can also bypass the UI and use direct commands:</p>
+            </div>
             
-            <div class="overflow-x-auto border border-gray-800 rounded-xl bg-gray-900/10">
+            <div class="overflow-x-auto border border-gray-800 rounded-xl bg-gray-900/10 shadow-2xl shadow-black/50">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="border-b border-gray-800">
-                            <th class="px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-semibold">Command</th>
-                            <th class="px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-semibold">Description</th>
+                        <tr class="border-b border-gray-800 bg-gray-800/30">
+                            <th class="px-6 py-4 text-xs uppercase tracking-wider text-gray-400 font-bold">Command</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-wider text-gray-400 font-bold">Description</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-800/50">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs</code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Opens the TUI</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs</code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Opens the TUI interface.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs <span class="text-gray-600">&lt;name&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Create (or jump to) a named experiment</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs <span class="text-gray-600">&lt;name&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Create (or jump to) a named experiment.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs <span class="text-gray-600">&lt;url&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a dated folder</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs <span class="text-gray-600">&lt;url&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a dated folder.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs <span class="text-gray-600">&lt;url&gt; &lt;name&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a specific folder name</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs <span class="text-gray-600">&lt;url&gt; &lt;name&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a specific folder name.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs -s <span class="text-gray-600">&lt;url&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Shallow clone (depth 1)</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs -s <span class="text-gray-600">&lt;url&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Shallow clone (depth 1) for fast experiments.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs --setup <span class="text-gray-600">&lt;shell&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Setup shell integration (fish, zsh, bash, power-shell, nu-shell)</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs -w <span class="text-gray-600">&lt;name&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Create a <strong>git worktree</strong> from the current repository.</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs --version</code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Show application version</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs --setup <span class="text-gray-600">&lt;shell&gt;</span></code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Setup shell integration (fish, zsh, bash, power-shell, nu-shell).</td>
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm">try-rs --help</code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Show help message</td>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs --version</code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Show application version.</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs --help</code></td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Show help message.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p class="mt-4 text-xs text-gray-500 italic text-center">Tip: You can use the alias <code class="text-orange-500/70">try</code> after configuring shell integration.</p>
         </div>
     </section>
 
@@ -203,73 +206,46 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Instant Workspaces -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-600/10 transition-colors"><i data-lucide="zap" class="text-orange-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Instant Workspaces</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Generate isolated environments in milliseconds. No more cluttering your <code class="mono text-xs">/tmp</code> or home folder manually.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Generate isolated environments in milliseconds. No more cluttering your <code class="mono text-xs">/tmp</code> manually.</p>
                 </div>
 
-                <!-- Fuzzy Filtering -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-blue-600/10 transition-colors"><i data-lucide="search" class="text-blue-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Fuzzy Filtering</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Start typing anywhere in the TUI. Built-in fuzzy matching helps you find that project from two weeks ago instantly.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Start typing anywhere in the TUI. Built-in fuzzy matching helps you find projects instantly.</p>
                 </div>
 
-                <!-- Git Integration -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-purple-600/10 transition-colors"><i data-lucide="git-branch" class="text-purple-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Git Integration</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Provide a GitHub/GitLab URL as an argument. try-rs clones it into a new dated folder and drops you in the shell.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Provide a GitHub URL. try-rs clones it into a new dated folder and drops you in the shell.</p>
                 </div>
 
-                <!-- Interactive TUI -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-green-600/10 transition-colors"><i data-lucide="monitor" class="text-green-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Interactive TUI</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">A beautiful Ratatui-powered terminal interface. Browse your experiments with zero latency and full visual feedback.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">A beautiful Ratatui-powered terminal interface. Browse experiments with zero latency.</p>
                 </div>
 
-                <!-- Safe Cleanup -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-red-600/10 transition-colors"><i data-lucide="trash-2" class="text-red-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Safe Cleanup</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Delete old workspaces directly from the interface with <code class="mono text-xs">Ctrl+D</code>. Includes a safety confirmation popup.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Delete old workspaces directly from the interface with <code class="mono text-xs">Ctrl+D</code>.</p>
                 </div>
 
-                <!-- Editor Launch -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="edit-3" class="text-orange-500 w-5 h-5"></i></div>
+                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-600/10 transition-colors"><i data-lucide="edit-3" class="text-orange-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Editor Launch</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Open your favorite IDE (VSCode, Neovim, Helix) instantly in the selected workspace using the <code class="mono text-xs">Ctrl+E</code> shortcut.</p>
-                </div>
-
-                <!-- Themes & Personalization -->
-                <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-pink-600/10 transition-colors"><i data-lucide="palette" class="text-pink-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Built-in Themes</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Switch between popular color schemes like Catppuccin, Gruvbox, or Tokyo Night at runtime with <code class="mono text-xs">Ctrl+T</code>.</p>
-                </div>
-
-                <!-- Dated Hierarchy -->
-                <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-yellow-600/10 transition-colors"><i data-lucide="calendar" class="text-yellow-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Dated Hierarchy</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Automatically organizes folders using a <code class="mono text-xs">YYYY-MM-DD-name</code> format, making chronological navigation effortless.</p>
-                </div>
-
-                <!-- Cross-platform -->
-                <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-cyan-600/10 transition-colors"><i data-lucide="globe" class="text-cyan-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Cross-platform</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Native support for Linux, macOS, and Windows. Uses OS-standard configuration paths for a native feel everywhere.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Open your favorite IDE instantly in the workspace using the <code class="mono text-xs">Ctrl+E</code> shortcut.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Themes Section -->
+    <!-- Seção de Temas -->
     <section id="themes" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -277,7 +253,6 @@
             </h2>
             <p class="text-gray-400 mb-8 leading-relaxed">
                 You can switch between themes at runtime by pressing <code class="mono text-orange-400 bg-orange-400/10 px-1.5 py-0.5 rounded border border-orange-400/20">Ctrl+T</code>. 
-                The following themes are currently available:
             </p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
@@ -285,151 +260,42 @@
                     <span class="text-white font-semibold text-sm">Catppuccin Mocha</span>
                     <span class="text-[10px] text-gray-600 block mt-1 italic">(Default)</span>
                 </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Dracula</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">JetBrains Darcula</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Gruvbox Dark</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Nord</span>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Tokyo Night</span>
-                </div>
-            </div>
-
-            <div class="p-6 border border-gray-800 rounded-2xl bg-[#161b22]/30">
-                <div class="flex items-center gap-3 mb-4">
-                    <i data-lucide="info" class="w-5 h-5 text-blue-500"></i>
-                    <h3 class="text-lg font-bold text-white tracking-tight">Custom Themes</h3>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                    Preference for something unique? You can define your own color palette by overriding the <code class="mono text-orange-300">[colors]</code> section in your <code class="mono text-orange-300">config.toml</code>.
-                </p>
-                <a href="#config" class="text-xs text-orange-500 hover:text-orange-400 font-semibold flex items-center gap-1 transition-colors">
-                    View Configuration Guide <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                </a>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Dracula</span></div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">JetBrains Darcula</span></div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Gruvbox Dark</span></div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Nord</span></div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Tokyo Night</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Configuration Section -->
+    <!-- Seção de Configuração -->
     <section id="config" class="py-32 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
                 <i data-lucide="settings" class="text-orange-500"></i> Configuration
             </h2>
-            <p class="text-gray-400 mb-8 leading-relaxed">Customize your experience by creating a <code class="mono text-orange-300">config.toml</code> file. The application checks for configuration in the following order:</p>
+            <p class="text-gray-400 mb-8 leading-relaxed">Customize your experience by creating a <code class="mono text-orange-300">config.toml</code> file.</p>
             
-            <!-- Paths by OS -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <!-- Linux -->
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2 text-white font-bold text-sm">
-                        <i data-lucide="terminal" class="w-4 h-4 text-orange-500"></i> Linux
-                    </div>
-                    <div class="space-y-2">
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">1. OS Default</span>
-                            <code class="mono text-xs text-gray-400 block break-all">~/.config/try-rs/config.toml</code>
-                        </div>
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">2. Home Local</span>
-                            <code class="mono text-xs text-gray-400 block break-all">~/.config/try-rs/config.toml</code>
-                        </div>
-                    </div>
+                    <div class="flex items-center gap-2 text-white font-bold text-sm"><i data-lucide="terminal" class="w-4 h-4 text-orange-500"></i> Linux</div>
+                    <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20 font-mono text-xs text-gray-400 break-all">~/.config/try-rs/config.toml</div>
                 </div>
-
-                <!-- macOS -->
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2 text-white font-bold text-sm">
-                        <i data-lucide="apple" class="w-4 h-4 text-orange-500"></i> macOS
-                    </div>
-                    <div class="space-y-2">
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">1. OS Default</span>
-                            <code class="mono text-xs text-gray-400 block break-all">~/Library/Application Support/try-rs/config.toml</code>
-                        </div>
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">2. Home Local</span>
-                            <code class="mono text-xs text-gray-400 block break-all">~/.config/try-rs/config.toml</code>
-                        </div>
-                    </div>
+                    <div class="flex items-center gap-2 text-white font-bold text-sm"><i data-lucide="apple" class="w-4 h-4 text-orange-500"></i> macOS</div>
+                    <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20 font-mono text-xs text-gray-400 break-all">~/Library/Application Support/try-rs/config.toml</div>
                 </div>
-
-                <!-- Windows -->
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2 text-white font-bold text-sm">
-                        <i data-lucide="layout" class="w-4 h-4 text-orange-500"></i> Windows
-                    </div>
-                    <div class="space-y-2">
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">1. OS Default</span>
-                            <code class="mono text-xs text-gray-400 block break-all">%AppData%\try-rs\config.toml</code>
-                        </div>
-                        <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20">
-                            <span class="text-[10px] uppercase text-gray-600 mb-1 block">2. Home Local</span>
-                            <code class="mono text-xs text-gray-400 block break-all">~/.config/try-rs/config.toml</code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-4">Config File Example</h3>
-            <div class="code-block p-6 mb-12 overflow-x-auto">
-                <pre class="mono text-sm text-gray-400 leading-relaxed whitespace-pre-wrap"><span class="text-gray-600"># config.toml</span>
-<span class="text-orange-500">tries_path</span> = <span class="text-green-400">"~/Development/playground"</span>
-<span class="text-orange-500">editor</span> = <span class="text-green-400">"code"</span> <span class="text-gray-600"># Optional: code, nvim, hx, etc.</span>
-
-<span class="text-orange-400">[colors]</span>
-<span class="text-orange-500">title_try</span> = <span class="text-green-400">"Magenta"</span>
-<span class="text-orange-500">title_rs</span> = <span class="text-green-400">"White"</span>
-<span class="text-orange-500">search_box</span> = <span class="text-green-400">"Green"</span>
-<span class="text-orange-500">list_date</span> = <span class="text-green-400">"Blue"</span>
-<span class="text-orange-500">list_highlight_bg</span> = <span class="text-green-400">"Magenta"</span>
-<span class="text-orange-500">list_highlight_fg</span> = <span class="text-green-400">"Black"</span>
-<span class="text-orange-500">help_text</span> = <span class="text-green-400">"DarkGray"</span>
-<span class="text-orange-500">status_message</span> = <span class="text-green-400">"Yellow"</span>
-<span class="text-orange-500">popup_bg</span> = <span class="text-green-400">"DarkGray"</span>
-<span class="text-orange-500">popup_text</span> = <span class="text-green-400">"LightRed"</span></pre>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-6">Environment Variables</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
-                    <div class="flex items-center justify-between mb-2">
-                        <code class="mono text-orange-400 text-sm font-bold">TRY_PATH</code>
-                        <span class="text-[10px] text-gray-600 border border-gray-800 px-1.5 rounded uppercase">Path</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-3 leading-relaxed">Overrides the path where experiments are stored.</p>
-                    <code class="mono text-gray-400 text-[10px] bg-black/30 p-1.5 rounded block overflow-x-auto">export TRY_PATH="/home/user/tmp"</code>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
-                    <div class="flex items-center justify-between mb-2">
-                        <code class="mono text-orange-400 text-sm font-bold">TRY_CONFIG_DIR</code>
-                        <span class="text-[10px] text-gray-600 border border-gray-800 px-1.5 rounded uppercase">Directory</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-3 leading-relaxed">Overrides the default configuration directory.</p>
-                    <code class="mono text-gray-400 text-[10px] bg-black/30 p-1.5 rounded block overflow-x-auto">export TRY_CONFIG_DIR="/home/user/.myconfig"</code>
-                </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
-                    <div class="flex items-center justify-between mb-2">
-                        <code class="mono text-orange-400 text-sm font-bold">TRY_CONFIG</code>
-                        <span class="text-[10px] text-gray-600 border border-gray-800 px-1.5 rounded uppercase">Filename</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-3 leading-relaxed">Overrides the config filename (defaults to <code class="mono">config.toml</code>).</p>
-                    <code class="mono text-gray-400 text-[10px] bg-black/30 p-1.5 rounded block overflow-x-auto">export TRY_CONFIG="custom.toml"</code>
+                    <div class="flex items-center gap-2 text-white font-bold text-sm"><i data-lucide="layout" class="w-4 h-4 text-orange-500"></i> Windows</div>
+                    <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20 font-mono text-xs text-gray-400 break-all">%AppData%\try-rs\config.toml</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Installation Section -->
-    <section id="install" class="py-24 px-6 bg-[#161b22]/30 border-y border-gray-800">
+    <!-- Seção de Instalação -->
+    <section id="install" class="py-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-white mb-12">Install Now</h2>
             
@@ -452,8 +318,6 @@
                     <span id="install-cmd-text">cargo install try-rs</span>
                 </div>
             </div>
-            
-            <p class="mt-6 text-sm text-gray-500" id="install-requirement">Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed on your system.</p>
         </div>
     </section>
 
@@ -480,7 +344,7 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left mb-10">
             <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-center md:justify-start gap-2">
-                    <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/logo.png" alt="try-rs logo" class="w-6 h-6 object-contain">
+                    <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/logo2.png" alt="try-rs logo" class="w-6 h-6 object-contain">
                     <span class="text-white font-bold">try-rs</span>
                 </div>
                 <span class="text-gray-500 text-sm">Built by <a href="https://github.com/tassiovirginio" class="text-gray-300 hover:text-orange-500 underline decoration-gray-700 underline-offset-4">Tássio Virgínio</a></span>
@@ -489,90 +353,44 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <!-- Product Hunt Badge in Footer -->
                 <a href="https://www.producthunt.com/products/try-rs?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-try-rs" target="_blank" rel="noopener noreferrer">
-                    <img alt="try-rs - Your experiments deserve a place. | Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
+                    <img alt="try-rs Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
                 </a>
 
                 <div class="flex flex-wrap justify-center md:justify-end gap-8 text-sm text-gray-500 font-medium">
-                    <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5">
-                        <i data-lucide="package" class="w-4 h-4"></i> Crates.io
-                    </a>
-                    <a href="https://terminaltrove.com/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5">
-                        <i data-lucide="terminal" class="w-4 h-4"></i> Terminal Trove
-                    </a>
-                    <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors flex items-center gap-1.5">
-                        <i data-lucide="github" class="w-4 h-4"></i> Star on GitHub
-                    </a>
-                    <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors flex items-center gap-1.5">
-                        <i data-lucide="file-text" class="w-4 h-4"></i> MIT License
-                    </a>
+                    <a href="https://crates.io/crates/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="package" class="w-4 h-4"></i> Crates.io</a>
+                    <a href="https://terminaltrove.com/try-rs" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="terminal" class="w-4 h-4"></i> Terminal Trove</a>
+                    <a href="https://github.com/tassiovirginio/try-rs/stargazers" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="github" class="w-4 h-4"></i> Star on GitHub</a>
+                    <a href="https://github.com/tassiovirginio/try-rs/blob/main/LICENSE" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="file-text" class="w-4 h-4"></i> MIT License</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Função para inicializar os ícones de forma segura
-        function initIcons() {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }
-
-        // Aguardar o carregamento completo da página e do script Lucide
+        function initIcons() { if (typeof lucide !== 'undefined') lucide.createIcons(); }
         window.addEventListener('load', initIcons);
         document.addEventListener('DOMContentLoaded', initIcons);
 
-        // Lógica dos separadores de instalação
         function switchTab(tab, cmd) {
             document.getElementById('install-cmd-text').innerText = cmd;
-            
-            // Atualizar requisito visual
-            const reqEl = document.getElementById('install-requirement');
-            if (tab === 'ppa') {
-                reqEl.innerHTML = 'Requirements: Ubuntu or Debian-based system with <code class="text-gray-400">software-properties-common</code>.';
-            } else if (tab === 'nix') {
-                reqEl.innerHTML = 'Requirements: <code class="text-gray-400">nix</code> with flakes enabled.';
-            } else if (tab === 'cargo') {
-                reqEl.innerHTML = 'Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed.';
-            } else if (tab === 'aur') {
-                reqEl.innerHTML = 'Requirements: An Arch Linux helper like <code class="text-gray-400">yay</code> or <code class="text-gray-400">paru</code>.';
-            }
-
-            // Atualizar classes ativas
             const tabs = ['cargo', 'ppa', 'nix', 'aur'];
             tabs.forEach(t => {
                 const el = document.getElementById('tab-' + t);
                 if (el) {
-                    if (t === tab) {
-                        el.classList.add('tab-active');
-                        el.classList.remove('text-gray-400', 'hover:text-white');
-                    } else {
-                        el.classList.remove('tab-active');
-                        el.classList.add('text-gray-400', 'hover:text-white');
-                    }
+                    if (t === tab) { el.classList.add('tab-active'); el.classList.remove('text-gray-400'); }
+                    else { el.classList.remove('tab-active'); el.classList.add('text-gray-400'); }
                 }
             });
         }
 
-        // Função genérica para copiar para o clipboard
-        function copyToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-        }
-
         function copyCmd(text, btn) {
-            copyToClipboard(text);
+            const el = document.createElement('textarea');
+            el.value = text; document.body.appendChild(el); el.select();
+            document.execCommand('copy'); document.body.removeChild(el);
             const originalIcon = btn.innerHTML;
             btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-green-500"></i>';
             if (typeof lucide !== 'undefined') lucide.createIcons();
-            setTimeout(() => {
-                btn.innerHTML = originalIcon;
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-            }, 2000);
+            setTimeout(() => { btn.innerHTML = originalIcon; if (typeof lucide !== 'undefined') lucide.createIcons(); }, 2000);
         }
 
         function copyInstallCmd(btn) {
