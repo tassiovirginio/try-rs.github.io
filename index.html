@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="pt" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>try-rs — Your experiments deserve a place</title>
-    <!-- Favicon atualizado -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://github.com/tassiovirginio/try-rs.site/raw/refs/heads/main/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Carregando a biblioteca Lucide com defer para garantir ordem de execução -->
@@ -26,11 +26,18 @@
             border: 1px solid #30363d;
             border-radius: 0.5rem;
         }
+        .theme-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .theme-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(234, 88, 12, 0.4);
+        }
     </style>
 </head>
 <body class="bg-[#0d1117] text-gray-300 selection:bg-orange-500/30">
 
-    <!-- Navigation -->
+    <!-- Navegação -->
     <nav class="border-b border-gray-800 bg-[#0d1117]/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -40,6 +47,7 @@
             <div class="flex items-center gap-6">
                 <a href="#usage" class="hover:text-orange-500 transition-colors hidden md:block text-sm font-medium">Usage</a>
                 <a href="#features" class="hover:text-orange-500 transition-colors hidden md:block text-sm font-medium">Features</a>
+                <a href="#themes" class="hover:text-orange-500 transition-colors hidden md:block text-sm font-medium">Themes</a>
                 <a href="#config" class="hover:text-orange-500 transition-colors hidden md:block text-sm font-medium">Config</a>
                 <a href="#install" class="hover:text-orange-500 transition-colors hidden md:block text-sm font-medium">Install</a>
                 <a href="https://github.com/tassiovirginio/try-rs" target="_blank" class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-all text-sm font-medium">
@@ -50,12 +58,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Seção Hero -->
     <header class="pt-20 pb-32 px-6 relative overflow-hidden bg-grid">
         <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-sm font-medium mb-8">
-                <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-                <span>High-performance workspace manager</span>
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                <span>Instant workspace manager for temporary experiments</span>
             </div>
             
             <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/logo2.png" alt="try-rs logo" class="w-32 h-32 md:w-48 md:h-48 object-contain mb-8 hover:scale-105 transition-transform duration-300">
@@ -71,7 +79,7 @@
                 A lightning-fast TUI to manage temporary projects. Create, explore, and clone repositories instantly without cluttering your system.
             </p>
 
-            <!-- Badges Section -->
+            <!-- Medalhas -->
             <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
                 <a href="https://github.com/tassiovirginio/try-rs/releases" target="_blank">
                     <img src="https://img.shields.io/github/v/release/tassiovirginio/try-rs?style=flat-square&color=ea580c&label=GitHub" alt="GitHub release">
@@ -80,7 +88,7 @@
                     <img src="https://img.shields.io/crates/v/try-rs.svg?style=flat-square&color=ea580c" alt="Crates.io version">
                 </a>
                 <a href="https://aur.archlinux.org/packages/try-rs-bin" target="_blank">
-                    <img src="https://img.shields.io/aur/version/try-rs-bin?style=flat-square&color=1793d1&label=AUR&cacheSeconds=300" alt="AUR version">
+                    <img src="https://img.shields.io/aur/version/try-rs-bin?style=flat-square&color=1793d1&label=AUR" alt="AUR version">
                 </a>
                 <a href="https://launchpad.net/~tassiovirginio/+archive/ubuntu/try-rs" target="_blank">
                     <img src="https://img.shields.io/badge/PPA-Launchpad-ea580c?style=flat-square&logo=ubuntu" alt="PPA Launchpad">
@@ -109,7 +117,7 @@
         </div>
     </header>
 
-    <!-- Demo Section -->
+    <!-- Seção de Demonstração -->
     <section class="px-6 -mt-16 relative z-20">
         <div class="max-w-5xl mx-auto">
             <div class="bg-[#010409] border border-gray-700 rounded-xl shadow-2xl overflow-hidden shadow-orange-500/10">
@@ -126,7 +134,7 @@
                     <div class="w-12"></div>
                 </div>
                 
-                <div class="relative bg-[#010409] group">
+                <div class="relative bg-[#010409]">
                     <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs/refs/heads/main/try-rs.gif" 
                          alt="try-rs TUI Demo" 
                          class="w-full h-auto block">
@@ -135,7 +143,7 @@
         </div>
     </section>
 
-    <!-- CLI Commands Section -->
+    <!-- Comandos CLI -->
     <section id="usage" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
@@ -168,7 +176,7 @@
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs <span class="text-gray-600">&lt;url&gt; &lt;name&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a specific folder name.</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Clones a repository into a specific custom folder name.</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs -s <span class="text-gray-600">&lt;url&gt;</span></code></td>
@@ -176,7 +184,7 @@
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs -w <span class="text-gray-600">&lt;name&gt;</span></code></td>
-                            <td class="px-6 py-4 text-sm text-gray-400">Create a <strong>git worktree</strong> from the current repository.</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">Create a <strong>git worktree</strong> from current repository.</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 text-sm font-semibold">try-rs --setup <span class="text-gray-600">&lt;shell&gt;</span></code></td>
@@ -193,89 +201,109 @@
                     </tbody>
                 </table>
             </div>
-            <p class="mt-4 text-xs text-gray-500 italic text-center">Tip: You can use the alias <code class="text-orange-500/70">try</code> after configuring shell integration.</p>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Funcionalidades -->
     <section id="features" class="py-24 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Everything try-rs can do</h2>
-                <p class="text-gray-400">A robust feature set built for speed and organization.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Core Features</h2>
+                <p class="text-gray-400">Built to handle everything from quick tests to deep dives into existing code.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-600/10 transition-colors"><i data-lucide="zap" class="text-orange-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Instant Workspaces</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Generate isolated environments in milliseconds. No more cluttering your <code class="mono text-xs">/tmp</code> manually.</p>
-                </div>
-
-                <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-blue-600/10 transition-colors"><i data-lucide="search" class="text-blue-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Fuzzy Filtering</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Start typing anywhere in the TUI. Built-in fuzzy matching helps you find projects instantly.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Generate isolated environments in milliseconds. No more cluttering your home directory with manual folders.</p>
                 </div>
 
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-purple-600/10 transition-colors"><i data-lucide="git-branch" class="text-purple-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Git Integration</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Provide a GitHub URL. try-rs clones it into a new dated folder and drops you in the shell.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Advanced Git Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Automatic repository cloning and <strong>git worktree</strong> creation. Switch branches without messing up your main repository.</p>
                 </div>
 
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-green-600/10 transition-colors"><i data-lucide="monitor" class="text-green-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Interactive TUI</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">A beautiful Ratatui-powered terminal interface. Browse experiments with zero latency.</p>
+                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-blue-600/10 transition-colors"><i data-lucide="search" class="text-blue-500 w-5 h-5"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Fuzzy & Filter</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Find past experiments instantly with built-in fuzzy searching and real-time filtering in the TUI.</p>
+                </div>
+
+                <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
+                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="edit-3" class="text-orange-500 w-5 h-5"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">One-Key IDE Launch</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Jump directly into your favorite editor (VSCode, Neovim, Helix) within the workspace using simple shortcuts.</p>
                 </div>
 
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-red-600/10 transition-colors"><i data-lucide="trash-2" class="text-red-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Safe Cleanup</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Delete old workspaces directly from the interface with <code class="mono text-xs">Ctrl+D</code>.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Smart Cleanup</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Delete obsolete projects safely. Features an interactive deletion popup to prevent data loss.</p>
                 </div>
 
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl hover:border-orange-500/30 transition-all group">
-                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-orange-600/10 transition-colors"><i data-lucide="edit-3" class="text-orange-500 w-5 h-5"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Editor Launch</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Open your favorite IDE instantly in the workspace using the <code class="mono text-xs">Ctrl+E</code> shortcut.</p>
+                    <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-pink-600/10 transition-colors"><i data-lucide="monitor" class="text-pink-500 w-5 h-5"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Modern TUI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A beautiful Ratatui-powered terminal interface. Browse your experiments with zero latency and full visual feedback.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Temas -->
+    <!-- Temas -->
     <section id="themes" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <i data-lucide="palette" class="text-orange-500"></i> Themes
-            </h2>
-            <p class="text-gray-400 mb-8 leading-relaxed">
-                You can switch between themes at runtime by pressing <code class="mono text-orange-400 bg-orange-400/10 px-1.5 py-0.5 rounded border border-orange-400/20">Ctrl+T</code>. 
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors">
-                    <span class="text-white font-semibold text-sm">Catppuccin Mocha</span>
-                    <span class="text-[10px] text-gray-600 block mt-1 italic">(Default)</span>
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-6 text-center md:text-left">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4 flex items-center justify-center md:justify-start gap-3">
+                        <i data-lucide="palette" class="text-orange-500"></i> Built-in Themes
+                    </h2>
+                    <p class="text-gray-400 max-w-lg leading-relaxed">
+                        Personalize your workspace. Switch between popular color schemes at runtime by pressing 
+                        <code class="mono text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded border border-orange-400/20">Ctrl + T</code>.
+                    </p>
                 </div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Dracula</span></div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">JetBrains Darcula</span></div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Gruvbox Dark</span></div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Nord</span></div>
-                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/20 hover:border-gray-700 transition-colors"><span class="text-white font-semibold text-sm">Tokyo Night</span></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#1e1e2e] border-4 border-[#cba6f7] shadow-lg"></div>
+                    <span class="text-white font-semibold text-sm">Catppuccin</span>
+                    <span class="text-[10px] text-gray-600 uppercase tracking-widest font-bold">Default</span>
+                </div>
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#282a36] border-4 border-[#bd93f9]"></div>
+                    <span class="text-white font-semibold text-sm">Dracula</span>
+                </div>
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#282828] border-4 border-[#ebdbb2]"></div>
+                    <span class="text-white font-semibold text-sm">Gruvbox</span>
+                </div>
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#2e3440] border-4 border-[#88c0d0]"></div>
+                    <span class="text-white font-semibold text-sm">Nord</span>
+                </div>
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#1a1b26] border-4 border-[#7aa2f7]"></div>
+                    <span class="text-white font-semibold text-sm">Tokyo Night</span>
+                </div>
+                <div class="theme-card p-6 border border-gray-800 rounded-2xl bg-gray-900/20 flex flex-col items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#2b2b2b] border-4 border-[#a9b7c6]"></div>
+                    <span class="text-white font-semibold text-sm">Darcula</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Configuração -->
+    <!-- Configuração -->
     <section id="config" class="py-32 px-6 bg-[#161b22]/30 border-y border-gray-800">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
                 <i data-lucide="settings" class="text-orange-500"></i> Configuration
             </h2>
-            <p class="text-gray-400 mb-8 leading-relaxed">Customize your experience by creating a <code class="mono text-orange-300">config.toml</code> file.</p>
+            <p class="text-gray-400 mb-8 leading-relaxed">Customize your experience by creating a <code class="mono text-orange-300">config.toml</code> file. Supports full color customization and default editor settings.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div class="flex flex-col gap-3">
@@ -291,10 +319,26 @@
                     <div class="p-3 border border-gray-800 rounded-xl bg-gray-900/20 font-mono text-xs text-gray-400 break-all">%AppData%\try-rs\config.toml</div>
                 </div>
             </div>
+
+            <h3 class="text-xl font-bold text-white mb-4">Environment Variables</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
+                    <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_PATH</code>
+                    <p class="text-xs text-gray-500 leading-relaxed">Overrides the base path where experiments are stored.</p>
+                </div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
+                    <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_CONFIG_DIR</code>
+                    <p class="text-xs text-gray-500 leading-relaxed">Overrides the default configuration directory location.</p>
+                </div>
+                <div class="p-4 border border-gray-800 rounded-xl bg-gray-900/10">
+                    <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_CONFIG</code>
+                    <p class="text-xs text-gray-500 leading-relaxed">Overrides the configuration filename (default: config.toml).</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Seção de Instalação -->
+    <!-- Instalação -->
     <section id="install" class="py-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-white mb-12">Install Now</h2>
@@ -318,11 +362,13 @@
                     <span id="install-cmd-text">cargo install try-rs</span>
                 </div>
             </div>
+            
+            <p class="mt-6 text-sm text-gray-500" id="install-requirement">Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed on your system.</p>
         </div>
     </section>
 
     <!-- Powered By Section -->
-    <div class="max-w-6xl mx-auto py-12 border-b border-gray-800/50 flex flex-wrap justify-center gap-8 text-xs text-gray-500 uppercase tracking-widest bg-[#0d1117]">
+    <div class="max-w-6xl mx-auto py-12 border-b border-gray-800/50 flex flex-wrap justify-center gap-12 text-xs text-gray-500 uppercase tracking-widest bg-[#0d1117]">
         <div class="flex items-center gap-3">
             <span>Developed with</span>
             <a href="https://www.rust-lang.org/" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors group">
@@ -339,7 +385,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Rodapé -->
     <footer class="py-12 px-6 bg-[#010409]">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left mb-10">
             <div class="flex flex-col gap-2">
@@ -351,9 +397,9 @@
             </div>
             
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <!-- Product Hunt Badge in Footer -->
+                <!-- Product Hunt Badge -->
                 <a href="https://www.producthunt.com/products/try-rs?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-try-rs" target="_blank" rel="noopener noreferrer">
-                    <img alt="try-rs Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
+                    <img alt="try-rs - Your experiments deserve a place. | Product Hunt" width="200" height="43" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060098&amp;theme=dark&amp;t=1767868140601" class="hover:opacity-90 transition-opacity">
                 </a>
 
                 <div class="flex flex-wrap justify-center md:justify-end gap-8 text-sm text-gray-500 font-medium">
@@ -373,6 +419,12 @@
 
         function switchTab(tab, cmd) {
             document.getElementById('install-cmd-text').innerText = cmd;
+            const reqEl = document.getElementById('install-requirement');
+            if (tab === 'ppa') reqEl.innerHTML = 'Requirements: Ubuntu/Debian with <code class="text-gray-400">software-properties-common</code>.';
+            else if (tab === 'nix') reqEl.innerHTML = 'Requirements: <code class="text-gray-400">nix</code> with flakes enabled.';
+            else if (tab === 'cargo') reqEl.innerHTML = 'Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed.';
+            else if (tab === 'aur') reqEl.innerHTML = 'Requirements: An Arch Linux helper like <code class="text-gray-400">yay</code> or <code class="text-gray-400">paru</code>.';
+
             const tabs = ['cargo', 'ppa', 'nix', 'aur'];
             tabs.forEach(t => {
                 const el = document.getElementById('tab-' + t);
