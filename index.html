@@ -34,6 +34,16 @@
             border-color: rgba(234, 88, 12, 0.4);
             background-color: rgba(255, 255, 255, 0.05);
         }
+        .theme-item {
+            transition: all 0.2s ease;
+            border: 1px solid #30363d;
+        }
+        .theme-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: rgba(234, 88, 12, 0.4);
+        }
         .kbd-key {
             background: #161b22;
             border: 1px solid #30363d;
@@ -307,7 +317,7 @@
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl theme-card group">
                     <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mb-4 border border-gray-700 group-hover:bg-blue-600/10 transition-colors"><i data-lucide="globe" class="text-blue-500 w-5 h-5"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Multi-OS Support</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Native performance on Linux, macOS and Windows.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Supports Linux, macOS and Windows.</p>
                 </div>
                 <!-- Icons Identification -->
                 <div class="p-6 bg-gray-800/20 border border-gray-800 rounded-2xl theme-card group lg:col-span-3">
@@ -377,7 +387,7 @@
                     <span class="kbd-key">Ctrl+U</span>
                 </div>
                 <div class="flex items-center justify-between p-4 border-b border-gray-800 group hover:bg-white/5 transition-colors rounded-lg">
-                    <span class="text-gray-400 text-sm font-medium text-left">Select or create new</span>
+                    <span class="text-gray-400 text-sm font-medium text-left">Select directory (or create new if text doesn't match)</span>
                     <span class="kbd-key">Enter</span>
                 </div>
                 <div class="flex items-center justify-between p-4 border-b border-gray-800 group hover:bg-white/5 transition-colors rounded-lg">
@@ -465,9 +475,10 @@
             
             <div class="flex flex-wrap justify-center gap-2 mb-8 p-1 bg-gray-800 rounded-xl w-fit mx-auto">
                 <button onclick="switchTab('cargo', 'cargo install try-rs')" id="tab-cargo" class="px-5 py-2 rounded-lg text-sm font-medium transition-all tab-active">Cargo</button>
+                <button onclick="switchTab('brew', 'brew install try-rs')" id="tab-brew" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">Homebrew</button>
                 <button onclick="switchTab('ppa', 'sudo add-apt-repository ppa:tassiovirginio/try-rs && sudo apt update && sudo apt install try-rs')" id="tab-ppa" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">PPA (Ubuntu)</button>
                 <button onclick="switchTab('nix', 'nix profile install github:tassiovirginio/try-rs')" id="tab-nix" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">Nix</button>
-                <button onclick="switchTab('aur', 'yay -S try-rs-bin')" id="tab-aur" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">AUR</button>
+                <button onclick="switchTab('aur', 'paru -S try-rs-bin')" id="tab-aur" class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">AUR</button>
             </div>
 
             <div class="bg-[#0d1117] border border-gray-700 rounded-xl p-6 mono text-sm group relative max-w-2xl mx-auto text-left">
@@ -544,8 +555,9 @@
             else if (tab === 'nix') reqEl.innerHTML = 'Requirements: <code class="text-gray-400">nix</code> with flakes enabled.';
             else if (tab === 'cargo') reqEl.innerHTML = 'Requirements: <code class="text-gray-400">cargo</code> (Rust toolchain) installed.';
             else if (tab === 'aur') reqEl.innerHTML = 'Requirements: An Arch Linux helper like <code class="text-gray-400">yay</code> or <code class="text-gray-400">paru</code>.';
+            else if (tab === 'brew') reqEl.innerHTML = 'Requirements: <code class="text-gray-400">brew</code> (Homebrew) installed.';
 
-            const tabs = ['cargo', 'ppa', 'nix', 'aur'];
+            const tabs = ['cargo', 'ppa', 'nix', 'aur', 'brew'];
             tabs.forEach(t => {
                 const el = document.getElementById('tab-' + t);
                 if (el) {
