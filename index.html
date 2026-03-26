@@ -99,6 +99,17 @@
             transform: translateY(0);
         }
 
+        .theme-item {
+            transition: all 0.2s ease;
+            border: 1px solid #30363d;
+        }
+        .theme-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: rgba(234, 88, 12, 0.4);
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #0d1117; }
@@ -116,7 +127,6 @@
                 <span class="text-xl font-bold text-white tracking-tight italic">try-rs</span>
             </div>
             
-            <!-- Floating Ferris in the center -->
             <div class="absolute left-1/2 -translate-x-1/2 top-1 pointer-events-auto hidden md:block">
                 <a href="https://rust-lang.org/" target="_blank" class="block hover:scale-110 transition-transform origin-top">
                     <img src="https://raw.githubusercontent.com/tassiovirginio/try-rs.site/refs/heads/main/ferris.gif" alt="Rust Ferris" class="h-[70px] drop-shadow-xl">
@@ -124,12 +134,12 @@
             </div>
 
             <div class="flex items-center gap-6 text-sm font-medium">
-                <a href="#usage" class="text-gray-400 hover:text-white transition-colors hidden md:block">Usage</a>
-                <a href="#features" class="text-gray-400 hover:text-white transition-colors hidden md:block">Features</a>
-                <a href="#themes" class="text-gray-400 hover:text-white transition-colors hidden md:block">Themes</a>
-                <a href="#keys" class="text-gray-400 hover:text-white transition-colors hidden md:block">Keys</a>
-                <a href="#config" class="text-gray-400 hover:text-white transition-colors hidden md:block">Config</a>
-                <a href="#install" class="text-gray-400 hover:text-white transition-colors hidden md:block">Install</a>
+                <a href="#usage" class="text-gray-400 hover:text-white transition-colors hidden lg:block">Usage</a>
+                <a href="#features" class="text-gray-400 hover:text-white transition-colors hidden lg:block">Features</a>
+                <a href="#themes" class="text-gray-400 hover:text-white transition-colors hidden lg:block">Themes</a>
+                <a href="#keys" class="text-gray-400 hover:text-white transition-colors hidden lg:block">Keys</a>
+                <a href="#config" class="text-gray-400 hover:text-white transition-colors hidden lg:block">Config</a>
+                <a href="#install" class="text-gray-400 hover:text-white transition-colors hidden sm:block">Install</a>
                 <a href="https://github.com/tassiovirginio/try-rs" target="_blank" class="flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-white px-4 py-2 rounded-xl transition-all shadow-lg backdrop-blur-sm">
                     <i data-lucide="github" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">GitHub</span>
@@ -194,7 +204,6 @@
     <!-- Demo Section -->
     <section class="px-6 -mt-20 relative z-20 mb-32 reveal">
         <div class="max-w-5xl mx-auto relative">
-            <!-- Glow behind terminal -->
             <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-purple-600 rounded-[1.5rem] blur-2xl opacity-20 pointer-events-none"></div>
             
             <div class="bg-[#010409] border border-gray-700/80 rounded-2xl shadow-2xl overflow-hidden relative z-10 backdrop-blur-xl">
@@ -285,6 +294,22 @@
                                 <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Print shell integration script to stdout (for manual setup)</td>
                             </tr>
                             <tr class="hover:bg-white/[0.03] transition-colors group">
+                                <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 font-bold bg-orange-400/10 px-2 py-1 rounded">try-rs --completions <span class="text-orange-400/60">&lt;shell&gt;</span></code></td>
+                                <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Generate shell completion script for tab completion</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors group">
+                                <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 font-bold bg-orange-400/10 px-2 py-1 rounded">try-rs --inline-picker [--inline-height &lt;n&gt;]</code></td>
+                                <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Open the picker inline (non-fullscreen) in the current terminal</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors group">
+                                <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 font-bold bg-orange-400/10 px-2 py-1 rounded">try-rs --show-preview --show-legend</code></td>
+                                <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Explicitly show panel sections</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors group">
+                                <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 font-bold bg-orange-400/10 px-2 py-1 rounded">try-rs --hide-preview --hide-disk</code></td>
+                                <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Explicitly hide panel sections</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors group">
                                 <td class="px-6 py-4 whitespace-nowrap"><code class="mono text-orange-400 font-bold bg-orange-400/10 px-2 py-1 rounded">try-rs --version</code></td>
                                 <td class="px-6 py-4 text-gray-300 group-hover:text-white transition-colors">Show application version</td>
                             </tr>
@@ -316,7 +341,6 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Cards converted to glass-card with modern hover -->
                 <div class="p-6 glass-card rounded-2xl group">
                     <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-orange-500/50 transition-all duration-300"><i data-lucide="gauge" class="text-orange-500 w-6 h-6 drop-shadow-[0_0_8px_rgba(234,88,12,0.5)]"></i></div>
                     <h3 class="text-xl font-bold text-white mb-2">Blazing Fast</h3>
@@ -370,11 +394,17 @@
                     <h3 class="text-xl font-bold text-white mb-2">Safe Deletion</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Delete old experiments via UI with confirmation (<code class="mono bg-white/10 px-1 rounded text-xs text-white">Ctrl+D</code>).</p>
                 </div>
+
+                <div class="p-6 glass-card rounded-2xl group">
+                    <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-indigo-400/50 transition-all duration-300"><i data-lucide="folder-open" class="text-indigo-400 w-6 h-6 drop-shadow-[0_0_8px_rgba(129,140,248,0.5)]"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Tabs</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Multiple workspaces in tabs (<code class="mono bg-white/10 px-1 rounded text-xs text-white">←</code> <code class="mono bg-white/10 px-1 rounded text-xs text-white">→</code> to switch).</p>
+                </div>
                 
                 <div class="p-6 glass-card rounded-2xl group">
                     <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-gray-400/50 transition-all duration-300"><i data-lucide="settings" class="text-gray-400 w-6 h-6 drop-shadow-[0_0_8px_rgba(156,163,175,0.5)]"></i></div>
                     <h3 class="text-xl font-bold text-white mb-2">Configurable</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Supports XDG Base Directory standards (see Config).</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Supports XDG Base Directory (view section <a href="#config" class="text-orange-400 hover:underline">Configuration</a>).</p>
                 </div>
                 
                 <div class="p-6 glass-card rounded-2xl group">
@@ -382,11 +412,23 @@
                     <h3 class="text-xl font-bold text-white mb-2">Multi-Shell Support</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Supports Fish, Zsh, Bash, Power Shell and Nushell.</p>
                 </div>
+
+                <div class="p-6 glass-card rounded-2xl group">
+                    <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-fuchsia-400/50 transition-all duration-300"><i data-lucide="panel-bottom" class="text-fuchsia-400 w-6 h-6 drop-shadow-[0_0_8px_rgba(232,121,249,0.5)]"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Inline Picker</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Adds support for a non-fullscreen picker.</p>
+                </div>
                 
                 <div class="p-6 glass-card rounded-2xl group">
                     <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-300"><i data-lucide="globe" class="text-blue-400 w-6 h-6 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]"></i></div>
                     <h3 class="text-xl font-bold text-white mb-2">Multi-OS Support</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Native performance on Linux, macOS and Windows.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Supports Linux, macOS and Windows.</p>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl group">
+                    <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-teal-400/50 transition-all duration-300"><i data-lucide="keyboard" class="text-teal-400 w-6 h-6 drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Shell Tab Completion</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Dynamic tab completion for directory names from your tries path.</p>
                 </div>
                 
                 <div class="p-6 glass-card rounded-2xl group lg:col-span-3 relative overflow-hidden">
@@ -397,7 +439,7 @@
                         <div class="w-12 h-12 bg-[#0d1117] rounded-xl flex items-center justify-center mb-5 border border-gray-700 shadow-inner group-hover:scale-110 group-hover:border-yellow-500/50 transition-all duration-300 mx-auto md:mx-0"><i data-lucide="sparkles" class="text-yellow-500 w-6 h-6 drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]"></i></div>
                         <h3 class="text-xl font-bold text-white mb-2 text-center md:text-left">Icons Identification</h3>
                         <p class="text-gray-400 text-sm leading-relaxed text-center md:text-left font-mono tracking-widest text-lg"> 󰬔     </p>
-                        <p class="text-gray-500 text-xs mt-2 text-center md:text-left">Supports project identification via Nerd Fonts.</p>
+                        <p class="text-gray-500 text-xs mt-2 text-center md:text-left">Supports project identification icons.</p>
                     </div>
                 </div>
             </div>
@@ -415,22 +457,23 @@
                 <p class="text-gray-400 text-lg mb-8">Switch themes on the fly inside the app with <span class="kbd-key">Ctrl + T</span>.</p>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 text-center">
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #1e1e2e; color: #cba6f7;">Catppuccin Mocha</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #24273a; color: #f5bde6;">Catppuccin Macchiato</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #282a36; color: #50fa7b;">Dracula</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #2b2b2b; color: #a9b7c6;">JetBrains Darcula</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #282828; color: #ebdbb2;">Gruvbox Dark</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #2e3440; color: #88c0d0;">Nord</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #1a1b26; color: #7aa2f7;">Tokyo Night</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #282c34; color: #61afef;">One Dark Pro</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #2d353b; color: #a7c080;">Everforest</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #262335; color: #ff7edb;">SynthWave '84</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #000000; color: #ffffff; border: 1px solid #333;">OLED True Black</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #c0c0c0; color: #333333;">Silver Gray</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #ffffff; color: #000000;">Black & White</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #000000; color: #00ff41; border: 1px solid #003b00;">Matrix</div>
-                <div class="theme-item p-5 rounded-2xl font-bold text-sm flex items-center justify-center h-24" style="background-color: #0d0d0d; color: #6fc3df; border: 1px solid #1a1a1a;">Tron</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 text-center">
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #0d1117; color: #c9d1d9;">Default</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #1e1e2e; color: #cba6f7;">Catppuccin Mocha</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #24273a; color: #f5bde6;">Catppuccin Macchiato</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #282a36; color: #50fa7b;">Dracula</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #2b2b2b; color: #a9b7c6;">JetBrains Darcula</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #282828; color: #ebdbb2;">Gruvbox Dark</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #2e3440; color: #88c0d0;">Nord</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #1a1b26; color: #7aa2f7;">Tokyo Night</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #282c34; color: #61afef;">One Dark Pro</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #2d353b; color: #a7c080;">Everforest</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #262335; color: #ff7edb;">SynthWave '84</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #000000; color: #ffffff; border: 1px solid #333;">OLED True Black</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #c0c0c0; color: #333333;">Silver Gray</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #ffffff; color: #000000;">Black & White</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #000000; color: #00ff41; border: 1px solid #003b00;">Matrix</div>
+                <div class="theme-item p-4 rounded-2xl font-bold text-sm flex items-center justify-center h-20" style="background-color: #0d0d0d; color: #6fc3df; border: 1px solid #1a1a1a;">Tron</div>
             </div>
         </div>
     </section>
@@ -438,7 +481,7 @@
     <!-- Key Bindings -->
     <section id="keys" class="py-24 px-6 relative reveal">
         <div class="absolute inset-0 bg-[#161b22]/30 border-y border-gray-800 -z-10"></div>
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center justify-center p-3 bg-purple-500/10 rounded-2xl mb-4 text-purple-500 ring-1 ring-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.15)]">
                     <i data-lucide="keyboard" class="w-8 h-8"></i>
@@ -447,49 +490,91 @@
                 <p class="text-gray-400 text-lg">Master the interface with these lightning-fast shortcuts.</p>
             </div>
 
-            <div class="glass-card rounded-3xl p-2 sm:p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Filter the list <span class="text-gray-500 text-xs ml-1">(Fuzzy Search)</span></span>
-                        <span class="kbd-key">Type</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Navigate the list</span>
-                        <div class="flex gap-1 flex-wrap justify-end">
-                            <span class="kbd-key">↑</span>
-                            <span class="kbd-key">↓</span>
-                            <span class="kbd-key">Ctrl+K/J/P/N</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- General Shortcuts -->
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-white font-bold mb-6 flex items-center gap-2 border-b border-gray-800 pb-3">
+                        <i data-lucide="layout" class="text-gray-400 w-5 h-5"></i> General Navigation
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Filter the list <span class="text-gray-500 text-xs ml-1">(Fuzzy)</span></span>
+                            <span class="kbd-key">Type</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Navigate the list</span>
+                            <div class="flex gap-1">
+                                <span class="kbd-key">↑</span><span class="kbd-key">↓</span>
+                                <span class="text-xs text-gray-500 mx-1">or</span>
+                                <span class="kbd-key">Ctrl+K/J/P/N</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Clear search box</span>
+                            <span class="kbd-key">Ctrl+U</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Switch tabs <span class="text-gray-500 text-xs ml-1">(multiple workspaces)</span></span>
+                            <div class="flex gap-1"><span class="kbd-key">←</span><span class="kbd-key">→</span></div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Select / Create new</span>
+                            <span class="kbd-key">Enter</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                            <span class="text-gray-300 text-sm">Delete directory <span class="text-gray-500 text-xs ml-1">(triggers popup)</span></span>
+                            <span class="kbd-key">Ctrl+D</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl bg-white/[0.02] border border-white/5">
+                            <span class="text-gray-300 text-sm">Cancel / Exit</span>
+                            <div class="flex gap-1"><span class="kbd-key">Esc</span><span class="kbd-key">Ctrl+C</span></div>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Clear search</span>
-                        <span class="kbd-key">Ctrl+U</span>
+                </div>
+
+                <!-- App Shortcuts & Theme -->
+                <div class="space-y-8">
+                    <div class="glass-card rounded-3xl p-6">
+                        <h3 class="text-white font-bold mb-6 flex items-center gap-2 border-b border-gray-800 pb-3">
+                            <i data-lucide="command" class="text-gray-400 w-5 h-5"></i> App Shortcuts
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Open in editor</span>
+                                <span class="kbd-key">Ctrl+E</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Open theme selector</span>
+                                <span class="kbd-key">Ctrl+T</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Open about popup</span>
+                                <span class="kbd-key">Ctrl+A</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Toggle right panel <span class="text-gray-500 text-xs ml-1">(disk/preview)</span></span>
+                                <span class="kbd-key">Alt+P</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Select / Create new</span>
-                        <span class="kbd-key">Enter</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Delete directory</span>
-                        <span class="kbd-key">Ctrl+D</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Open in editor</span>
-                        <span class="kbd-key">Ctrl+E</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">Theme selector</span>
-                        <span class="kbd-key">Ctrl+T</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5">
-                        <span class="text-gray-300 font-medium">About popup</span>
-                        <span class="kbd-key">Ctrl+A</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-white/[0.03] transition-colors rounded-xl border border-transparent hover:border-white/5 md:col-span-2 bg-white/[0.02]">
-                        <span class="text-gray-300 font-medium">Cancel / Close Popup / Exit</span>
-                        <div class="flex gap-2">
-                            <span class="kbd-key">Esc</span>
-                            <span class="kbd-key">Ctrl+C</span>
+
+                    <div class="glass-card rounded-3xl p-6">
+                        <h3 class="text-white font-bold mb-6 flex items-center gap-2 border-b border-gray-800 pb-3">
+                            <i data-lucide="palette" class="text-gray-400 w-5 h-5"></i> Theme Selector
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Navigate themes</span>
+                                <div class="flex gap-1"><span class="kbd-key">↑/↓</span><span class="text-xs text-gray-500">or</span><span class="kbd-key">j/k/n/p</span></div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl">
+                                <span class="text-gray-300 text-sm">Select theme</span>
+                                <span class="kbd-key">Enter</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 hover:bg-white/[0.03] transition-colors rounded-xl bg-white/[0.02] border border-white/5">
+                                <span class="text-gray-300 text-sm">Close theme selector</span>
+                                <div class="flex gap-1"><span class="kbd-key">Esc</span><span class="kbd-key">Ctrl+C</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -523,24 +608,56 @@
                 </div>
             </div>
 
-            <div class="glass-card rounded-3xl p-6 md:p-10">
+            <div class="glass-card rounded-3xl p-6 md:p-10 mb-8">
                 <h4 class="text-white font-bold mb-6 flex items-center gap-3 text-lg">
                     <i data-lucide="variable" class="text-orange-500"></i>
                     Environment Variables
                 </h4>
-                <div class="grid md:grid-cols-3 gap-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-[#0d1117] p-5 rounded-2xl border border-gray-800/80">
                         <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_PATH</code>
-                        <p class="text-sm text-gray-500 leading-relaxed">Workspace storage path</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Overrides path where experiments are stored.</p>
                     </div>
                     <div class="bg-[#0d1117] p-5 rounded-2xl border border-gray-800/80">
                         <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_CONFIG_DIR</code>
-                        <p class="text-sm text-gray-500 leading-relaxed">Custom configuration directory</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Overrides default configuration directory.</p>
                     </div>
                     <div class="bg-[#0d1117] p-5 rounded-2xl border border-gray-800/80">
                         <code class="mono text-orange-400 text-sm font-bold block mb-2">TRY_CONFIG</code>
-                        <p class="text-sm text-gray-500 leading-relaxed">Custom configuration filename</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Overrides config filename (default: config.toml).</p>
                     </div>
+                    <div class="bg-[#0d1117] p-5 rounded-2xl border border-gray-800/80">
+                        <code class="mono text-orange-400 text-sm font-bold block mb-2">VISUAL / EDITOR</code>
+                        <p class="text-sm text-gray-500 leading-relaxed">Default editor if not set in config.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 md:p-10 overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-white font-bold flex items-center gap-3 text-lg">
+                        <i data-lucide="file-code" class="text-orange-500"></i>
+                        config.toml Example
+                    </h4>
+                </div>
+                <div class="code-block p-5 overflow-x-auto text-sm mono text-gray-300 leading-relaxed border border-gray-800">
+<pre>
+<span class="text-gray-500"># config.toml</span>
+<span class="text-orange-400">tries_path</span> = <span class="text-green-400">"~/Development/playground"</span>
+<span class="text-orange-400">editor</span> = <span class="text-green-400">"code"</span> <span class="text-gray-500"># Optional: code, nvim, hx, etc.</span>
+<span class="text-orange-400">apply_date_prefix</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is false</span>
+<span class="text-orange-400">transparent_background</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is true</span>
+
+<span class="text-gray-500"># ui configuration</span>
+<span class="text-orange-400">show_right_panel</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is true</span>
+<span class="text-orange-400">right_panel_width</span> = <span class="text-blue-400">25</span> <span class="text-gray-500"># optional, right panel width in percentage (20-80)</span>
+<span class="text-orange-400">show_disk</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is true</span>
+<span class="text-orange-400">show_preview</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is true</span>
+<span class="text-orange-400">show_legend</span> = <span class="text-purple-400">true</span> <span class="text-gray-500"># optional, default is true</span>
+
+<span class="text-gray-500"># Theme configuration</span>
+<span class="text-orange-400">theme</span> = <span class="text-green-400">"Catppuccin Mocha"</span>
+</pre>
                 </div>
             </div>
         </div>
